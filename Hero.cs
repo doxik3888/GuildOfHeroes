@@ -30,7 +30,7 @@ public class Hero {
 
         Health += amount;
     }
-    
+
     public void GainExperience(int amount) {
         if (amount <= 0) {
             return;
@@ -38,14 +38,15 @@ public class Hero {
 
         Experience += amount;
     }
-}
 
+    public bool IsAlive() {
+        return Health > 0;
+    }
 
-public class Person {
-    public string Name;
-
-    public Person(string name) {
-        Name = name;
+    public string GetInfo() {
+        return $">>> {Name} <<<\n" +
+               $"Здоровье: {Health}\n" +
+               $"Уровень: {Level}\n" +
+               $"Опыт: {Experience}";
     }
 }
-
